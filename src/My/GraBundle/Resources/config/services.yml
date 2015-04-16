@@ -1,0 +1,5 @@
+services:
+    heroes.helper:
+        class: My\GraBundle\Service\HeroesService
+        calls:
+            - [setContainer, [@service_container]]

@@ -1,0 +1,13 @@
+{# empty Twig template #}{% extends "::layoutplay.html.twig" %}
+{% block content %}
+<h3>Items</h3>
+<p>
+    
+{{ form_start(form) }} {# wyświetla znacznik <form> z odpowiednio uzupełnionymi danymi #}
+    {{ form_widget(form.name) }} {# renderuje widget ("surową" część html-ową) naszego formularza, np pole tekstowe #}
+    {{ form_widget(form) }} {# renderuje wszystkie pozostałe pola formularza #}
+<button type="submit">Add</button>
+    {{ form_end(form) }} {# renderuje wszystkie pozostałe pola formularza oraz zamyka znacznik form otwarty przez funkcję form_start #}
+
+</p>
+{% endblock %}

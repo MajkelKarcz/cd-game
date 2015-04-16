@@ -1,0 +1,11 @@
+{# empty Twig template #}{% extends "::layoutplay.html.twig" %}
+{% block content %}
+<h3>Shop</h3>
+<p>
+<a href="{{ path('url_shop_sell',{ 'nick' :'nick'}) }}">Sell your items</a><br>
+Your current Gold is {{ current_gold }} <br><br>
+Item {{ item1 }} Price {{ price }}<br>
+{{ dump(item1) }} 
+<li><a href="{{ path('url_shop_buy',{ 'nick' :'nick'}) }}">Buy</a></li>
+</p>
+{% endblock %}

@@ -1,0 +1,20 @@
+{# empty Twig template #}{% extends "::layoutplay.html.twig" %}
+{% block content %}
+<h3>Shop</h3>
+<p>
+Sell your item<br>
+Name {{ nick }}<br>
+Weight max {{ weight }} <br>
+Item {{ item1 }}  <a href="{{ path('url_shop_sell_item1',{ 'nick' :'nick'}) }}">Sell item</a> 
+<a href="{{ path('url_insert_item1',{ 'nick' :'nick'}) }}">Put Item from the ground</a><br>
+{{dump(item1_item)}} <br>
+Item {{ item2 }}  <a href="{{ path('url_shop_sell_item2',{ 'nick' :'nick'}) }}">Sell item</a>  
+<a href="{{ path('url_insert_item2',{ 'nick' :'nick'}) }}">Put Item from the ground</a><br>
+{{dump(item2_item)}} <br>
+Item {{ item3 }}  <a href="{{ path('url_shop_sell_item3',{ 'nick' :'nick'}) }}">Sell item</a> 
+<a href="{{ path('url_insert_item3',{ 'nick' :'nick'}) }}">Put Item from the ground</a><br>
+{{dump(item3_item)}} <br>
+Item on the ground (Buyed or left by the monsters){{ itemtemp }} <br>
+{{dump(itemtemp_item)}} <br>
+</p>
+{% endblock %}
