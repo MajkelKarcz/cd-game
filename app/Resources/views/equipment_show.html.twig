@@ -1,0 +1,34 @@
+{% extends "::layoutplay.html.twig" %}
+{% block content %}
+<h3>Equipment</h3>
+<p>
+Name {{ nick }}<br>
+Weight max {{ weight }} <br>
+List of Items <br>
+{% for item in itemallitem %}
+    {% if (item != 'Empty' and item != NULL) %}
+Name          {{ item.name }}<br/>
+Str Bonus     {{ item.strBonus }}<br/>
+Hp bonus      {{ item.hpBonus }}<br/>
+Stamina bonus {{ item.staminaBonus }}<br/>
+Weight        {{ item.weight }}<br/>
+Price         {{ item.price }}<br/>
+    
+<a href="{{ path('url_remove_item1',{ 'nick' : 'nick', 
+'item_name' : item.name  }) }}">Remove Item</a> <br><br>
+    {% elseif (item_ground != 'Empty' and item_ground != NULL) %}
+        <br><a href="{{ path('url_insert_item1',{ 'nick' : 'nick', 
+'item_name' : item.name  }) }}">Take Item From The Ground</a> <br><br>
+    {% endif %}
+{% endfor %}
+<br>Item on the ground<br>
+{% if (item_ground != 'Empty' and item_ground != NULL) %}
+Name          {{ item_ground.name }}<br/>
+Str Bonus     {{ item_ground.strBonus }}<br/>
+Hp bonus      {{ item_ground.hpBonus }}<br/>
+Stamina bonus {{ item_ground.staminaBonus }}<br/>
+Weight        {{ item_ground.weight }}<br/>
+Price         {{ item_ground.price }}<br/>
+{% endif %}
+</p>
+{% endblock %}

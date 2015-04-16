@@ -1,0 +1,22 @@
+{# empty Twig template #}{% extends "::layoutplay.html.twig" %}
+{% block content %}
+<h3>Shop</h3>
+<p>
+<a href="{{ path('url_shop_sell',{ 'nick' :'nick'}) }}">Sell your items</a><br><br>
+Your current Gold is {{ current_gold }} <br><br>
+List of Items <br><br>
+{% for item in items %}
+    {% if (item != 'Empty' and item != NULL) %}
+Name          {{ item.name }}<br>
+Str Bonus     {{ item.strBonus }}<br>
+Hp bonus      {{ item.hpBonus }}<br>
+Stamina bonus {{ item.staminaBonus }}<br>
+Weight        {{ item.weight }}<br>
+Price         {{ item.price }}<br><br>
+       {% if(current_gold >= item.price)%}
+       <li><a href="{{ path('url_shop_buy',{ 'nick' :'nick', 'item_name' : item.name }) }}">Buy</a></li><br>
+       {% endif %}
+    {% endif %}
+{% endfor %}
+</p>
+{% endblock %}

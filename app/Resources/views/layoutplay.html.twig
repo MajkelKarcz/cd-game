@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+<head>
+   <title>Game</title>
+    <link rel="stylesheet" href="{{ asset('css/foundation.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <script type="text/javascript" src="{{ asset('js/vendor/modernizr.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/vendor/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/foundation.min.js') }}"></script>
+</head>
+<body>    
+    <header class="row"><h1>Game</h1></header>
+    {% block menu %}
+        <div class="row">
+            <ul class="button-group round">
+                    <li><a href="{{ path('url_upload') }}" class="button">Upload</a></li>
+                    <li><a href="{{ path('url_pagination_list') }}" class="button">Pagination</a></li>
+                    <li><a href="{{ path('url_show_form') }}" class="button">Form</a></li>
+            </ul>
+            <ul class="button-group round">
+                    <li><a href="{{ path('url_new',{ 'nick' :'nick'}) }}" class="button success">New game</a></li>
+                    <li><a href="{{ path('url_statistic',{ 'nick' :'nick'}) }}" class="button success">Statistic</a></li>
+                    <li><a href="{{ path('url_equipment_show',{ 'nick' :'nick'}) }}" class="button success">Equipmnet</a></li>
+                    <li><a href="{{ path('url_shop_show',{ 'nick' :'nick'}) }}" class="button success">Shop</a></li>
+                    <li><a href="{{ path('url_fight',{ 'nick' :'nick'}) }}" class="button success">Fight</a></li>
+            </ul>
+        </div>
+        {% endblock %}
+        <br><br><br>
+        <div class="row">
+            <div class ="small-4 small-centered column" style="text-align: center">
+               {% block content %}
+               {% endblock %}
+            </div>
+        </div>
+    {% block javascripts %}       
+        <script type="text/javascript">
+            $(document).foundation();
+        </script>
+    {% endblock %}
+</body>
+</html>

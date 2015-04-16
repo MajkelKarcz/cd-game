@@ -1,0 +1,7 @@
+{{ form_start(form) }} {# wyświetla znacznik <form> z odpowiednio uzupełnionymi danymi #}
+    {{ form_widget(form.namegr) }} {# renderuje widget ("surową" część html-ową) naszego formularza, np pole tekstowe #}
+    
+<button type="submit">Add</button>
+    {{ form_end(form) }} {# renderuje wszystkie pozostałe pola formularza oraz zamyka znacznik form otwarty przez funkcję form_start #}
+
+
