@@ -21,4 +21,3 @@ class ItemType extends AbstractType{
     {
         return 'item';
     }
-}
